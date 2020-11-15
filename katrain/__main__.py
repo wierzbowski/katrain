@@ -604,6 +604,10 @@ def run_app():
     ExceptionManager.add_handler(CrashHandler())
     app = KaTrainApp()
     signal.signal(signal.SIGINT, app.signal_handler)
+
+    from kivy.core.window import Window
+    Window.maximize()
+
     app.run()
 
 
