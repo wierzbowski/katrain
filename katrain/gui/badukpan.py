@@ -452,7 +452,7 @@ class BadukPanWidget(Widget):
                         alpha = HINTS_ALPHA
                         if move_dict["visits"] < low_visits_threshold and not engine_best_move:
                             scale = UNCERTAIN_HINT_SCALE
-                            text_on = False
+                            text_on = True
                             alpha = HINTS_MIN_ALPHA + (HINTS_ALPHA - HINTS_MIN_ALPHA) * (
                                 move_dict["visits"] / low_visits_threshold
                             )
@@ -489,9 +489,9 @@ class BadukPanWidget(Widget):
                                 circle=(
                                     self.gridpos_x[move.coords[0]],
                                     self.gridpos_y[move.coords[1]],
-                                    self.stone_size - dp(1.2),
+                                    self.stone_size - dp(1.35),
                                 ),
-                                width=dp(1.2),
+                                width=dp(1.35),
                             )
 
             # children of current moves in undo / review
